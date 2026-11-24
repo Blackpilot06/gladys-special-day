@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gladys TV: birthday special</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Great+Vibes&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg1:#fff4f1;--bg2:#ffe0ec;--ink:#3a1c2e;--muted:#8a6a7d;--pink:#ff4f8b;--gold:#f5b942;--red:#e11d2e;--card:#ffffff;--line:rgba(58,28,46,.12);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg1:#1b0812;--bg2:#08030a;--ink:#fff4f1;--muted:#cdb0bf;--pink:#ff4f8b;--gold:#f5c46b;--red:#d4142a;--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.16);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;color:var(--ink);font-family:Nunito,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.55}
@@ -98,20 +98,53 @@ body.story .tick{display:block}
 @keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
 .hop{animation:hop 1s infinite}@keyframes hop{50%{transform:translateY(-14px)}}
 @media (prefers-reduced-motion:reduce){.dot,.tick div,.bg.on,.hop,.kb{animation:none}.tick div{padding-left:14px}.bg,#no{transition:none}.c{display:none}}
+
+body{padding-bottom:52px}
+.garland,.pill,.live{display:none}
+.top{flex-wrap:wrap;justify-content:space-between;gap:2px 12px;position:relative;z-index:1}
+.logo{font-family:'Great Vibes',cursive;font-weight:400;font-size:40px;line-height:1;color:#fff}.logo b{color:var(--red);font-weight:400}
+.mnav{order:3;width:100%;display:flex;justify-content:center;gap:0}
+.nv{background:none;border:0;border-bottom:2px solid transparent;color:#fff;font-size:15px;padding:8px;min-height:44px;cursor:pointer}
+.nv.on{border-bottom-color:var(--red)}
+#mt{position:static;width:auto;height:auto;min-height:40px;padding:6px 16px;border-radius:999px;background:transparent;border:1.5px solid #fff;color:#fff;font:500 14px Fredoka,sans-serif;box-shadow:none;gap:6px;align-items:center}
+.tick{display:block}
+#hero{display:block}body.eps #hero,body.story #hero{display:none}
+#watch{display:none}body.eps #watch{display:grid}
+.hero{max-width:1280px;margin:0 auto}
+.hphoto{height:46vh;min-height:300px}
+.hphoto img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.htxt{position:relative;margin-top:-36px;padding:0 18px 24px;text-align:center}
+.crown{font-size:34px;filter:drop-shadow(0 0 12px var(--gold))}
+.hero h1{margin:0}.hb,.hn{display:block;font-family:'Great Vibes',cursive;font-weight:400;line-height:1.05}
+.hb{font-size:clamp(46px,13vw,84px);color:var(--gold)}
+.hn{font-size:clamp(66px,20vw,128px);color:#e9ebf0;background:linear-gradient(#fff,#a9adb8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding:0 .1em}
+.tag{font-style:italic;font-size:18px;margin:6px 0 14px}
+.qcard{max-width:460px;margin:0 auto;border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:16px;padding:14px;display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center;text-align:left}
+.qi{font-size:34px}.qcard b{font-family:Fredoka,sans-serif;font-weight:500;font-size:18px;line-height:1.25}.qcard .btn{grid-column:1/-1;text-align:center}
+@media(min-width:900px){.hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center}.hphoto{height:min(76vh,700px)}.hphoto img{-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent);mask-image:linear-gradient(90deg,#000 70%,transparent)}.htxt{margin:0;padding:0 24px}.mnav{order:0;width:auto;gap:16px}}
+.panel{background:rgba(22,8,17,.9)}
+.btn.on{background:var(--gold);border-color:var(--gold);color:#2a1020}
+.btn.pri{background:linear-gradient(#ee2a3e,#b50f22);border-color:#e11d2e;color:#fff}
+.rc:hover{background:rgba(255,255,255,.08)}
+.bg{filter:blur(6px) brightness(.45)}
+#mh{background:rgba(0,0,0,.8)}
+.wi{display:flex;gap:8px;max-width:420px;margin:12px auto 0}
+.wi input{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:12px;color:var(--ink);font:16px Nunito,sans-serif;padding:10px 14px}
+#mr{width:100%;max-width:380px;accent-color:var(--pink);margin:10px 0}.ml{font-weight:700;color:var(--gold);min-height:1.7em}
+.feel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:420px;margin:12px auto 0}
+.feel .btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;font-size:13px}.feel .btn span{font-size:30px;line-height:1}
 </style>
 </head>
 <body>
 <div class="bgs" id="bgs" aria-hidden="true"></div>
-<button id="mt" type="button" aria-label="Mute music">🔊</button>
 <div id="mh" class="mh">🎵 Tap anywhere for music</div>
 <div id="yt" aria-hidden="true"><div id="ytp"></div></div>
 
-<svg class="garland" id="garl" viewBox="0 0 240 30" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="gp" width="60" height="30" patternUnits="userSpaceOnUse"><polygon points="0,0 20,0 10,26" fill="#ff4f8b"/><polygon points="20,0 40,0 30,26" fill="#f5b942"/><polygon points="40,0 60,0 50,26" fill="#b57bff"/></pattern></defs><rect width="240" height="30" fill="url(#gp)"/></svg>
-<header class="top" id="top"><span class="logo">🎂 Gladys TV</span><span class="pill" aria-hidden="true">Search for the birthday queen…</span><span class="live"><span class="dot"></span><span id="clock">LIVE</span></span></header>
-
+<header class="top" id="top"><span class="logo">Gladys<b>TV</b></span><nav class="mnav" aria-label="Main"><button class="nv on" data-go="home" type="button">🏠 Home</button><button class="nv" data-go="eps" type="button">▶ Episodes</button><button class="nv" data-go="story" type="button">🎁 Specials</button><button class="nv" data-go="share" type="button">⭐ Share</button></nav><button id="mt" type="button"><span aria-hidden="true">♪</span> <span id="mtl">Tap for music</span></button></header>
+<section id="hero" class="hero"><div class="hphoto"><img id="hpic" alt="Gladys smiling in a tiara"></div><div class="htxt"><div class="crown" aria-hidden="true">👑</div><h1><span class="hb">Happy Birthday</span><span class="hn">Gladys!</span></h1><p class="tag">You’re not just a year older…<br>You’re a year more amazing! ❤️</p><div class="qcard"><span class="qi" aria-hidden="true">💬</span><b>A few fun questions, made just for you</b><button class="btn pri" id="start" type="button">▶ Start the quiz ›</button></div></div></section>
 <main id="watch" class="watch">
   <section class="primary">
-    <div class="player"><div class="pbg" id="pbg"></div><video id="vid" muted loop playsinline autoplay preload="auto" controls></video><img id="still" alt="" hidden></div>
+    <div class="player"><div class="pbg" id="pbg"></div><video id="vid" muted playsinline autoplay preload="auto" controls></video><img id="still" alt="" hidden></div>
     <h1 id="title"></h1>
     <div class="meta">
       <img class="av" id="av" alt="Gladys">
@@ -125,13 +158,13 @@ body.story .tick{display:block}
 
 <section id="story" aria-live="polite">
   <div class="panel">
-    <div class="nav"><button class="btn" id="home" type="button">← Back to videos</button></div>
+    <div class="nav"><button class="btn" id="home" type="button">← Home</button></div>
     <img class="pic" id="pic" src="" alt="">
     <div id="st"></div>
   </div>
 </section>
 
-<div class="tick" aria-hidden="true"><div>BREAKING: Gladys declared main character, no objections received &nbsp;|&nbsp; Experts confirm the smile is real and the cause is under investigation &nbsp;|&nbsp; Friends urged to remain calm and send love &nbsp;|&nbsp; Government declares itself powerless &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+<div class="tick" aria-hidden="true"><div>📢 BREAKING NEWS &nbsp;▸&nbsp; Gladys declared main character, no objections received &nbsp;|&nbsp; Experts confirm the smile is real and the cause is under investigation &nbsp;|&nbsp; Friends urged to remain calm and send love &nbsp;|&nbsp; Government declares itself powerless &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
 <script type="application/json" id="media">[{"k":"fav","src":"assets/fav.jpg"},{"k":"meet","src":"assets/meet.jpg"},{"k":"red","src":"assets/red.jpg"},{"k":"car","src":"assets/car.jpg"},{"k":"twist","src":"assets/twist.jpg"},{"k":"v1","src":"assets/v1.mp4","po":"assets/v1-poster.jpg"},{"k":"v2","src":"assets/v2.mp4","po":"assets/v2-poster.jpg"},{"k":"her","src":"assets/her.jpg"},{"k":"v1w","src":"assets/v1w.webp"},{"k":"v2w","src":"assets/v2w.webp"},{"k":"gif","src":"assets/gif.webp"}]</script>
 <script>
 var CFG={her:'Gladys',wa:'254741412367',music:{id:'7Sq0UPS7a5o',start:150}};
@@ -151,13 +184,12 @@ var QS=[
 ['😊','Really good','Nice, I’ll take it 😄'],
 ['😍','Loved it','Same here 😊 I had a great time too.'],
 ['🥹','Best ever, let’s do it again!','Same here 🥰 The next one is already in the planning!']]},
-{k:'pick',q:'It’s your birthday month 🎂 What would make you smile the most?',o:[
-['💐 Flowers','💐','Flowers incoming. Excellent taste.'],
+{k:'pick',w:1,q:'It’s your birthday month 🎂 What would make you smile the most?',o:[
 ['🎁 A surprise gift','🎁','Ooh, now I have homework.'],
-['🎬 10D movie at Juja Mall','🎬','Hold on tight, the seats move 🤯'],
 ['🧑‍🤝‍🧑 A hangout where we choose the place','🍽️','A place with good food, deal 🍽️'],
-['🤷 I don’t know','🤷','No worries, I’ll surprise you then 😏']]},
-{k:'cal',q:'Which days work for our hangout? 📅',h:'Tap every day you’re free.'}
+['🤷 I don’t know yet','🤷','No worries, I’ll surprise you then 😏']]},
+{k:'meter',q:'How happy are you today? 🎈'},
+{k:'feel',q:'How are you feeling about your day? Pick the emoji.'}
 ];
 var NO=['Are you sure? 🥺','Think again 😏','Last chance 😭','Really?! 😤','Okay stop 😭'];
 var LN=['Wrong button 😏','The No button is shy','It’s not working, is it?','Just say Yes…','Nice try 😌','Too slow 💨','Catch me if you can 🏃','Yes is right there, you know 👀'];
@@ -175,14 +207,15 @@ var $=function(s){return document.querySelector(s)},M={},P={},reduce=matchMedia(
 JSON.parse($('#media').textContent).forEach(function(x){M[x.k]=x.src;if(x.po)P[x.k]=x.po});
 function thumb(id){return P[id]||M[id]}
 var urls={};function blob(s){if(urls[s])return urls[s];if(s.slice(0,5)!=='data:')return s;try{var m=s.slice(5,s.indexOf(';')),d=atob(s.slice(s.indexOf(',')+1)),u=new Uint8Array(d.length);for(var k=0;k<d.length;k++)u[k]=d.charCodeAt(k);return urls[s]=URL.createObjectURL(new Blob([u],{type:m}))}catch(e){return s}}
-var vid=$('#vid'),still=$('#still'),cur='v1',chk=null;
-function fallback(id){if(!M[id+'w']||cur!==id)return;vid.pause();vid.hidden=true;still.hidden=false;still.classList.remove('kb');still.src=M[id+'w'];still.alt=''}
+var vid=$('#vid'),still=$('#still'),cur='v1',chk=null,adv=null;
+function nextItem(){for(var i=0;i<ITEMS.length;i++)if(ITEMS[i].id===cur)break;load(ITEMS[(i+1)%ITEMS.length].id)}
+function fallback(id){if(!M[id+'w']||cur!==id)return;vid.pause();vid.hidden=true;still.hidden=false;still.classList.remove('kb');still.src=M[id+'w'];still.alt='';adv=setTimeout(nextItem,6000)}
 vid.muted=true;vid.defaultMuted=true;
-$('#av').src=M.twist;
-function load(id){cur=id;var it=ITEMS.filter(function(x){return x.id===id})[0];
+$('#av').src=M.twist;$('#hpic').src=M.her;
+function load(id){cur=id;var it=ITEMS.filter(function(x){return x.id===id})[0];clearTimeout(adv);
  $('#pbg').style.backgroundImage='url('+thumb(id)+')';
- if(it.type==='v'){still.hidden=true;vid.hidden=false;vid.poster=P[id];vid.dataset.fb='';vid.onerror=function(){if(!vid.dataset.fb){vid.dataset.fb='1';vid.src=M[id]}};vid.src=blob(M[id]);var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});clearTimeout(chk);chk=setTimeout(function(){if(cur===id&&!vid.hidden&&(vid.readyState<3||vid.paused||vid.currentTime<.05))fallback(id)},2500)}
- else{clearTimeout(chk);vid.pause();vid.hidden=true;still.hidden=false;still.src=M[id];still.alt=it.t;still.classList.remove('kb');void still.offsetWidth;still.classList.add('kb')}
+ if(it.type==='v'){still.hidden=true;vid.hidden=false;vid.poster=P[id];vid.dataset.fb='';vid.onerror=function(){if(!vid.dataset.fb){vid.dataset.fb='1';vid.src=M[id]}};vid.onended=nextItem;vid.src=blob(M[id]);var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});clearTimeout(chk);chk=setTimeout(function(){if(cur===id&&!vid.hidden&&(vid.readyState<3||vid.paused||vid.currentTime<.05))fallback(id)},2500)}
+ else{clearTimeout(chk);vid.pause();vid.hidden=true;still.hidden=false;still.src=M[id];still.alt=it.t;still.classList.remove('kb');void still.offsetWidth;still.classList.add('kb');adv=setTimeout(nextItem,5000)}
  $('#title').textContent=it.t;$('#views').textContent=it.v;$('#dsc').textContent=it.d;renderRec()}
 function renderRec(){$('#rl').innerHTML=ITEMS.filter(function(x){return x.id!==cur}).map(function(x){
  return '<button class="rc" type="button" data-id="'+x.id+'"><span class="th"><img src="'+thumb(x.id)+'" alt=""><span class="dur">'+x.dur+'</span></span><span><span class="rt">'+x.t+'</span><span class="rm">Gladys TV</span><span class="rm">'+x.v+'</span></span></button>'}).join('');
@@ -201,23 +234,22 @@ function put(h){st.innerHTML=h}
 function intro(){$('#pic').style.display='';$('#pic').src=M.her;$('#pic').alt='Gladys smiling in a garden';
  put('<span class="chip">BREAKING</span><h2>Gladys declared the main story of the day, officials say</h2><p>Our newsroom can confirm that today is, in fact, a birthday, and the subject has been smiling at the camera for suspiciously long.</p><p>Officials say she is “glowing beyond acceptable limits.” Before the full report is released, the subject must answer a few questions.</p><div class="acts"><button class="btn pri" id="go" type="button">Ask me 👀</button></div>');
  $('#go').onclick=function(){qi=0;ans=[];ask()}}
-function ask(){var s=QS[qi];s.k==='scale'?scale(s):s.k==='cal'?cal(s):pick(s)}
+function ask(){var s=QS[qi];({scale:scale,pick:pick,meter:meter,feel:feel})[s.k](s)}
 function scale(s){
  put('<h2>'+s.q+'</h2><p>'+s.h+'</p><div class="scale">'+s.o.map(function(o,i){return '<button class="sc" type="button" data-i="'+i+'" aria-label="'+o[1]+'">'+o[0]+'</button>'}).join('')+'</div><div class="lbl"><span>'+s.lo+'</span><span>'+s.hi+'</span></div>');
  document.querySelectorAll('.sc').forEach(function(b){b.onclick=function(){var o=s.o[+b.dataset.i];ans.push({q:s.q,a:o[0]+' '+o[1]});react({e:o[0],m:o[2]})}})}
 function pick(s){
- put('<h2>'+s.q+'</h2><div class="opts">'+s.o.map(function(o,i){return '<button class="btn opt" type="button" data-i="'+i+'">'+o[0]+'</button>'}).join('')+'</div>');
- document.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){var o=s.o[+b.dataset.i];ans.push({q:s.q,a:o[0]});react({e:o[1],m:o[2]})}})}
-function cal(s){var BOOKED=[12,13],sel=[],first=(new Date(2026,11,1).getDay()+6)%7,cells='';
- ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(function(d){cells+='<span class="dh">'+d+'</span>'});
- for(var i=0;i<first;i++)cells+='<span></span>';
- for(var d=1;d<=31;d++){var bk=BOOKED.indexOf(d)>-1;
-  cells+='<button type="button" class="dy'+(bk?' bk':'')+'" data-d="'+d+'"'+(bk?' disabled aria-label="December '+d+', booked"':' aria-pressed="false" aria-label="December '+d+'"')+'>'+d+(bk?'<i>🧳</i>':d===1?'<i>🎂</i>':'')+'</button>'}
- put('<h2>'+s.q+'</h2><p>'+s.h+'</p><div class="cal"><div class="cm">December 2026</div><div class="cg">'+cells+'</div><p class="lg">🧳 Booked: I’ll be at my grandma’s place on the 12th and 13th.</p></div><div class="acts"><button class="btn pri" id="dn" type="button" disabled>Done 💖</button><button class="btn" id="dk" type="button">🤷 I don’t know yet, I’ll let you know</button></div>');
- var dn=$('#dn');
- document.querySelectorAll('.dy:not(.bk)').forEach(function(b){b.onclick=function(){var d=+b.dataset.d,i=sel.indexOf(d);if(i>-1)sel.splice(i,1);else sel.push(d);b.classList.toggle('sel',i<0);b.setAttribute('aria-pressed',i<0?'true':'false');dn.disabled=!sel.length}});
- dn.onclick=function(){sel.sort(function(a,b){return a-b});ans.push({q:'Days free for our hangout',a:'December '+sel.join(', ')});react({e:'📅',m:'Locked in! I’ll plan around those days 🥳'})};
- $('#dk').onclick=function(){ans.push({q:'Days free for our hangout',a:'Not sure yet, will let you know'});react({e:'🤷',m:'No problem, just let me know when you’re sure 😊'})}}
+ put('<h2>'+s.q+'</h2><div class="opts">'+s.o.map(function(o,i){return '<button class="btn opt" type="button" data-i="'+i+'">'+o[0]+'</button>'}).join('')+'</div><div class="wi"><input id="wi" type="text" maxlength="140" placeholder="Or write your own (optional)" aria-label="Write your own answer"><button class="btn" id="wb" type="button">Send ✍️</button></div>');
+ document.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){var o=s.o[+b.dataset.i];ans.push({q:s.q,a:o[0]});react({e:o[1],m:o[2]})}});
+ $('#wb').onclick=function(){var t=$('#wi').value.trim();if(!t){$('#wi').focus();return}ans.push({q:s.q,a:t});react({e:'✍️',m:'Love that, noted 😍'})}}
+function meter(s){var F=[['😩','Running on fumes'],['😐','Meh, surviving'],['🙂','Pretty good'],['😄','Happy happy'],['🤩','Beyond limit!']];
+ put('<h2>'+s.q+'</h2><p>Slide it and watch the face.</p><div class="big" id="mf" aria-hidden="true">🙂</div><input type="range" id="mr" min="0" max="100" step="1" value="50" aria-label="Happiness level"><div class="ml" id="mv" aria-live="polite"></div><div class="acts"><button class="btn pri" id="mk" type="button">Lock it in 🔒</button></div>');
+ function up(){var v=+$('#mr').value,f=F[Math.min(4,Math.floor(v/20))];$('#mf').textContent=f[0];$('#mv').textContent=f[1]+' · '+v+'%'+(v===100?' 💥 Broke the meter!':'');return[v,f]}
+ $('#mr').oninput=up;up();
+ $('#mk').onclick=function(){var r=up();ans.push({q:s.q,a:r[0]+'% '+r[1][0]});react({e:r[1][0],m:r[0]>=80?'That’s the energy I like 🎉':'Hope the rest of the day lifts it even higher 💖'})}}
+function feel(s){var E=[['🥳','Celebrating'],['😌','Peaceful'],['🥹','Emotional'],['😴','Sleepy'],['🤩','On top of the world'],['😎','Too cool']];
+ put('<h2>'+s.q+'</h2><div class="feel">'+E.map(function(e,i){return '<button class="btn" type="button" data-i="'+i+'"><span>'+e[0]+'</span>'+e[1]+'</button>'}).join('')+'</div>');
+ document.querySelectorAll('.feel .btn').forEach(function(b){b.onclick=function(){var e=E[+b.dataset.i];ans.push({q:s.q,a:e[0]+' '+e[1]});react({e:e[0],m:'Got it, '+e[1].toLowerCase()+'. Enjoy every minute 💖'})}})}
 function react(r){confetti(60);
  put('<div class="big hop">'+r.e+'</div><h2>'+r.m+'</h2>'+(r.s?'<p>'+r.s+'</p>':'')+'<div class="acts"><button class="btn pri" id="nx" type="button">Next ➜</button></div>');
  $('#nx').onclick=function(){qi++;if(qi<QS.length)ask();else opener()}}
@@ -229,33 +261,36 @@ function letter(){confetti(120);
 function fin(){var sm=CFG.her+'’s answers 💌\n'+ans.map(function(x){return '• '+x.q+' → '+x.a}).join('\n');
  var wa='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(sm);confetti(140);
  put('<h2>Your birthday card 🎁</h2><img class="gif" src="'+M.gif+'" alt="Animated happy birthday card with Gladys’s photos, balloons and confetti"><p>Made just for you. Save it and keep it forever.</p><div class="acts"><a class="btn pri" href="'+M.gif+'" download="happy-birthday-gladys.webp">Save my card 💾</a><a class="btn" href="'+wa+'" target="_blank" rel="noopener">Send my answers to Jeff 💬</a><button class="btn" id="bk" type="button">Back to the videos</button></div>');
- $('#pic').style.display='none';window.scrollTo(0,0);$('#bk').onclick=goHome}
+ $('#pic').style.display='none';window.scrollTo(0,0);$('#bk').onclick=function(){go('eps')}}
 
-var forceHome=false;
-function goHome(){forceHome=true;try{history.replaceState(null,'',location.pathname+location.search)}catch(e){try{location.hash=''}catch(x){}}route()}
-function openStory(){forceHome=false;if(location.hash==='#story')route();else location.hash='story'}
-function route(){var on=location.hash==='#story'&&!forceHome;document.body.classList.toggle('story',on);
- if(on){vid.pause();startBg();window.scrollTo(0,0);intro()}else{clearInterval(timer);if(!still.hidden===false){var p=vid.play();if(p&&p.catch)p.catch(function(){})}}}
-$('#read').onclick=openStory;
-$('#home').onclick=goHome;
-window.addEventListener('hashchange',function(){forceHome=false;route()});
+function go(v){var h=v==='home'?'':v==='story'?'story':'episodes';if(location.hash.slice(1)===h)route();else location.hash=h}
+function route(){var h=location.hash.slice(1),v=h==='story'?'story':h==='episodes'?'eps':'home';
+ document.body.classList.toggle('story',v==='story');document.body.classList.toggle('eps',v==='eps');
+ document.querySelectorAll('.nv[data-go]').forEach(function(b){b.classList.toggle('on',b.dataset.go===v)});
+ clearInterval(timer);clearTimeout(adv);clearTimeout(chk);vid.pause();window.scrollTo(0,0);
+ if(v==='story'){startBg();intro()}else if(v==='eps')load(cur)}
+function hint(t){var h=$('#mh');h.textContent=t;h.style.display='block';setTimeout(function(){h.style.display='none'},2500)}
+function share(){var u=location.href.split('#')[0];if(navigator.share)navigator.share({title:'Gladys TV',url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){hint('Link copied 🔗')},function(){})}
+document.querySelectorAll('.nv').forEach(function(b){b.onclick=function(){var g=b.dataset.go;if(g==='share')share();else go(g)}});
+$('#read').onclick=function(){go('story')};$('#home').onclick=function(){go('home')};$('#start').onclick=function(){go('story')};
+window.addEventListener('hashchange',route);
 
 var MU=(function(){var pl=null,ready=false,playing=false,dead=false,muted=false,want=false,bt=$('#mt');
  function tryPlay(){if(!ready||playing||dead)return;try{pl.seekTo(CFG.music.start,true);if(!muted){pl.unMute();pl.setVolume(85)}pl.playVideo()}catch(e){}}
- function setMute(m){muted=m;try{if(m){pl.mute();pl.setVolume(0)}else{pl.unMute();pl.setVolume(85)}}catch(e){}bt.textContent=m?'🔇':'🔊';bt.setAttribute('aria-label',m?'Unmute music':'Mute music');bt.setAttribute('aria-pressed',m?'true':'false')}
+ function setMute(m){muted=m;try{if(m){pl.mute();pl.setVolume(0)}else{pl.unMute();pl.setVolume(85)}}catch(e){}$('#mtl').textContent=m?'Music Off':'Music On';bt.setAttribute('aria-label',m?'Unmute music':'Mute music');bt.setAttribute('aria-pressed',m?'true':'false')}
  window.onYouTubeIframeAPIReady=function(){var v={playsinline:1,controls:0,disablekb:1,rel:0,modestbranding:1,fs:0,start:CFG.music.start};if(/^https?:/.test(location.protocol))v.origin=location.origin;
   pl=new YT.Player('ytp',{width:200,height:200,videoId:CFG.music.id,playerVars:v,events:{
-   onReady:function(){ready=true;bt.style.display='grid';if(want)tryPlay();else{$('#mh').style.display='block';setTimeout(function(){$('#mh').style.display='none'},9000)}},
-   onStateChange:function(e){playing=e.data===1;if(playing&&muted){try{pl.mute();pl.setVolume(0)}catch(x){}}if(playing)$('#mh').style.display='none';if(e.data===0){try{pl.seekTo(CFG.music.start,true);pl.playVideo()}catch(x){}}},
+   onReady:function(){ready=true;bt.style.display='inline-flex';tryPlay();setTimeout(function(){if(!playing){$('#mh').style.display='block';setTimeout(function(){$('#mh').style.display='none'},9000)}},1500)},
+   onStateChange:function(e){playing=e.data===1;if(playing&&muted){try{pl.mute();pl.setVolume(0)}catch(x){}}if(playing){$('#mh').style.display='none';if(!muted)$('#mtl').textContent='Music On'}if(e.data===0){try{pl.seekTo(CFG.music.start,true);pl.playVideo()}catch(x){}}},
    onError:function(){dead=true;bt.style.display='none'}}})};
- bt.onclick=function(){if(!playing){want=true;muted=false;bt.textContent='🔊';tryPlay();return}setMute(!muted)};
- addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('#mt'))return;want=true;tryPlay()},{passive:true});
+ bt.onclick=function(){if(!playing){want=true;muted=false;tryPlay();return}setMute(!muted)};
+ var kick=function(e){if(e.target.closest&&e.target.closest('#mt'))return;want=true;tryPlay()};addEventListener('pointerdown',kick,{passive:true});addEventListener('click',kick);
  return{load:function(){var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.async=true;document.head.appendChild(t)}}})();
 MU.load();
-addEventListener('pointerdown',function(){if(!vid.hidden&&vid.paused&&!document.body.classList.contains('story')){var p=vid.play();if(p&&p.catch)p.catch(function(){})}},{passive:true});
+addEventListener('pointerdown',function(){if(!vid.hidden&&vid.paused&&document.body.classList.contains('eps')){var p=vid.play();if(p&&p.catch)p.catch(function(){})}},{passive:true});
 
 function tick(){var d=new Date();$('#clock').textContent='LIVE '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}
-tick();setInterval(tick,30000);load('v1');route();
+route();
 </script>
 </body>
 </html>
