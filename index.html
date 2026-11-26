@@ -66,24 +66,9 @@ body.story .bgs{display:block}
 .panel p{margin:0 auto 12px;max-width:52ch}
 .big{font-weight:600;font-size:64px;line-height:1.1;margin:4px 0}
 .letter{text-align:left}.letter p{font-size:clamp(16px,4.2vw,18px);line-height:1.7}
-.yn{display:flex;gap:14px;justify-content:center;align-items:center;min-height:84px;margin-top:8px}
-.scale{display:flex;gap:8px;justify-content:center;margin:14px 0 6px}
-.sc{flex:1;max-width:64px;aspect-ratio:1;border-radius:50%;font-size:28px;line-height:1;border:2px solid var(--line);background:var(--card);cursor:pointer;padding:0;transition:transform .15s}
-.sc:hover,.sc:focus-visible{transform:scale(1.14);border-color:var(--pink);outline:none}
-.lbl{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);max-width:380px;margin:0 auto 6px}
 .opts{display:grid;gap:10px;max-width:420px;margin:10px auto 0}
 .opts .btn{width:100%}
-.cal{max-width:370px;margin:12px auto 0}.cm{font-family:Fredoka,sans-serif;font-weight:600;font-size:18px;margin-bottom:8px}
-.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.dh{font-size:12px;color:var(--muted);font-weight:700}
-.dy{position:relative;aspect-ratio:1;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font:700 15px Nunito,sans-serif;padding:0}
-.dy:hover{border-color:var(--pink)}.dy.sel{background:var(--pink);border-color:var(--pink);color:#ffffff}
-.dy.bk{background:repeating-linear-gradient(45deg,#f3e8ec,#f3e8ec 6px,#e8d8df 6px,#e8d8df 12px);color:var(--muted);cursor:not-allowed;text-decoration:line-through}
-.dy i{position:absolute;right:2px;bottom:0;font-size:10px;font-style:normal;text-decoration:none}
-.lg{font-size:13.5px;color:var(--muted);margin:10px 0 0}
 .btn:disabled{opacity:.45;cursor:not-allowed}
-.ln{min-height:2.2em;font-weight:700;color:var(--pink);margin:6px 0 0}
-#no{transition:left .32s cubic-bezier(.34,1.6,.5,1),top .32s cubic-bezier(.34,1.6,.5,1)}
-#no.run{position:fixed;z-index:20;margin:0}
 .acts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
 .gif{display:block;width:min(320px,86%);height:auto;margin:6px auto 12px;border-radius:14px;box-shadow:0 10px 26px rgba(150,40,90,.3)}
 #mt{position:fixed;z-index:50;top:calc(10px + env(safe-area-inset-top,0px));right:10px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:20px;display:none;place-items:center;cursor:pointer;padding:0;box-shadow:0 4px 12px rgba(0,0,0,.12)}
@@ -97,7 +82,7 @@ body.story .tick{display:block}
 .c{position:fixed;top:-12px;width:9px;height:14px;z-index:60;pointer-events:none;animation:fall linear forwards}
 @keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
 .hop{animation:hop 1s infinite}@keyframes hop{50%{transform:translateY(-14px)}}
-@media (prefers-reduced-motion:reduce){.dot,.tick div,.bg.on,.hop,.kb{animation:none}.tick div{padding-left:14px}.bg,#no{transition:none}.c{display:none}}
+@media (prefers-reduced-motion:reduce){.dot,.tick div,.bg.on,.hop,.kb{animation:none}.tick div{padding-left:14px}.bg{transition:none}.c{display:none}}
 
 body{padding-bottom:52px}
 .garland,.pill,.live{display:none}
@@ -128,8 +113,6 @@ body{padding-bottom:52px}
 .rc:hover{background:rgba(255,255,255,.08)}
 .bg{filter:blur(6px) brightness(.45)}
 #mh{background:rgba(0,0,0,.8)}
-.wi{display:flex;gap:8px;max-width:420px;margin:12px auto 0}
-.wi input{flex:1;min-width:0;background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:12px;color:var(--ink);font:16px Nunito,sans-serif;padding:10px 14px}
 #mr{width:100%;max-width:380px;accent-color:var(--pink);margin:10px 0}.ml{font-weight:700;color:var(--gold);min-height:1.7em}
 .feel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:420px;margin:12px auto 0}
 .feel .btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;font-size:13px}.feel .btn span{font-size:30px;line-height:1}
@@ -178,7 +161,6 @@ body.isgal #gal{display:block}body.isgal #hero{display:none}
 @media(min-width:900px){#pf{top:calc(62px + env(safe-area-inset-top,0px));right:24px}}
 .nvp{width:24px;height:24px;border-radius:50%;object-fit:cover;object-position:70% 20%;border:1.5px solid var(--gold);vertical-align:middle}
 .htxt .btn{display:block;width:100%;max-width:320px;margin:14px auto 0;padding:9px 8px;white-space:nowrap}
-.hphoto img{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%,#000 90%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12%,#000 80%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 34%,#000 90%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12%,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
 .hphoto{position:relative}.hphoto img,.hphoto video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%,#000 90%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12%,#000 80%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 34%,#000 90%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12%,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}.hphoto .on{opacity:1}.hdots{position:absolute;left:0;right:0;bottom:6px;display:flex;gap:5px;justify-content:center;z-index:2}.hdots i{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.4);transition:width .3s,background .3s}.hdots i.on{width:18px;background:var(--gold)}@media (prefers-reduced-motion:reduce){.hphoto img,.hphoto video,.hdots i{transition:none}}
 </style>
 </head>
@@ -217,7 +199,7 @@ body.isgal #gal{display:block}body.isgal #hero{display:none}
 <div class="tick" aria-hidden="true"><div>📢 BREAKING NEWS &nbsp;▸&nbsp; Gladys declared main character, no objections received &nbsp;|&nbsp; Experts confirm the smile is real and the cause is under investigation &nbsp;|&nbsp; Friends urged to remain calm and send love &nbsp;|&nbsp; Government declares itself powerless &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
 <script type="application/json" id="media">[{"k":"fav","src":"media/fav.jpg"},{"k":"meet","src":"media/meet.jpg"},{"k":"red","src":"media/red.jpg"},{"k":"car","src":"media/car.jpg"},{"k":"twist","src":"media/twist.jpg"},{"k":"v1","src":"media/v1.mp4","po":"media/v1-poster.jpg"},{"k":"v2","src":"media/v2.mp4","po":"media/v2-poster.jpg"},{"k":"her","src":"media/her.jpg"},{"k":"v1w","src":"media/v1w.webp"},{"k":"v2w","src":"media/v2w.webp"},{"k":"gif","src":"media/gif.webp"},{"k":"p1","src":"media/p1.jpg"},{"k":"p2","src":"media/p2.jpg"},{"k":"p3","src":"media/p3.jpg"}]</script>
 <script>
-var CFG={her:'Gladys',wa:'254741412367',music:{id:'7Sq0UPS7a5o',start:150},music2:{id:'J55SbQNt8OU',start:12}};
+var CFG={her:'Gladys',music:{id:'7Sq0UPS7a5o',start:150},music2:{id:'J55SbQNt8OU',start:12}};
 var ITEMS=[
 {id:'v1',type:'v',dur:'0:06',t:'BREAKING: Local woman declared main character on her birthday (full footage)',v:'2.4M views · 3 hours ago',d:'Our cameras caught the subject moving, smiling and ruining everyone’s concentration. Experts are calling it “completely unfair.”'},
 {id:'v2',type:'v',dur:'0:07',t:'Rare footage: she was seen being this fine on a totally normal day',v:'1.8M views · 5 hours ago',d:'Witnesses say nothing special was happening. She was simply there, and it was enough.'},
@@ -228,15 +210,6 @@ var ITEMS=[
 {id:'meet',type:'i',dur:'0:04',t:'Replying “lol” to three people at once (investigation ongoing)',v:'640K views · 2 weeks ago',d:'She was caught deep in a phone conversation. Sources say the person on the other end is “extremely lucky.”'}
 ];
 var QS=[
-{k:'scale',q:'Based on our previous hangouts, how much did you enjoy them? 😌',h:'Pick the face that fits best.',lo:'It was okay',hi:'Let’s do it again!',o:[
-['😐','It was okay','Ouch 😅 Noted. I’ll try harder next time.'],
-['🙂','Nice','Okay okay, I can work with that 😌'],
-['😊','Really good','Nice, I’ll take it 😄'],
-['😍','Loved it','Same here 😊 I had a great time too.'],
-['🥹','Best ever, let’s do it again!','Same here 🥰 The next one is already in the planning!']]},
-{k:'pick',w:1,q:'It’s your birthday month 🎂 What would make you smile the most?',o:[
-['🎁 A surprise gift','🎁','Ooh, now I have homework.'],
-['🤷 I don’t know yet','🤷','No worries, I’ll surprise you then 😏']]},
 {k:'meter',q:'How happy are you today? 🎈'},
 {k:'feel',q:'How are you feeling about your day? Pick the emoji.'}
 ];
@@ -281,14 +254,7 @@ function put(h){st.innerHTML=h}
 function intro(){var c=$('#pic');c.style.display='';c.src=M.her;c.alt='Gladys smiling in a garden';
  put('<span class="chip">BREAKING</span><h2>Gladys declared the main story of the day, officials say</h2><p>Our newsroom can confirm that today is, in fact, a birthday, and the subject has been smiling at the camera for suspiciously long.</p><p>Officials say she is “glowing beyond acceptable limits.” Before the full report is released, the subject must answer a few questions.</p><div class="acts"><button class="btn pri" id="go" type="button">Ask me 👀</button></div>');
  $('#go').onclick=function(){qi=0;ans=[];ask()}}
-function ask(){var s=QS[qi];({scale:scale,pick:pick,meter:meter,feel:feel})[s.k](s)}
-function scale(s){
- put('<h2>'+s.q+'</h2><p>'+s.h+'</p><div class="scale">'+s.o.map(function(o,i){return '<button class="sc" type="button" data-i="'+i+'" aria-label="'+o[1]+'">'+o[0]+'</button>'}).join('')+'</div><div class="lbl"><span>'+s.lo+'</span><span>'+s.hi+'</span></div>');
- document.querySelectorAll('.sc').forEach(function(b){b.onclick=function(){var o=s.o[+b.dataset.i];ans.push({q:s.q,a:o[0]+' '+o[1]});react({e:o[0],m:o[2]})}})}
-function pick(s){
- put('<h2>'+s.q+'</h2><div class="opts">'+s.o.map(function(o,i){return '<button class="btn opt" type="button" data-i="'+i+'">'+o[0]+'</button>'}).join('')+'</div><div class="wi"><input id="wi" type="text" maxlength="140" placeholder="Or write your own (optional)" aria-label="Write your own answer"><button class="btn" id="wb" type="button">Send ✍️</button></div>');
- document.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){var o=s.o[+b.dataset.i];ans.push({q:s.q,a:o[0]});react({e:o[1],m:o[2]})}});
- $('#wb').onclick=function(){var t=$('#wi').value.trim();if(!t){$('#wi').focus();return}ans.push({q:s.q,a:t});react({e:'✍️',m:'Love that, noted 😍'})}}
+function ask(){var s=QS[qi];({meter:meter,feel:feel})[s.k](s)}
 function meter(s){var F=[['😩','Running on fumes'],['😐','Meh, surviving'],['🙂','Pretty good'],['😄','Happy happy'],['🤩','Beyond limit!']];
  put('<h2>'+s.q+'</h2><p>Slide it and watch the face.</p><div class="big" id="mf" aria-hidden="true">🙂</div><input type="range" id="mr" min="0" max="100" step="1" value="50" aria-label="Happiness level"><div class="ml" id="mv" aria-live="polite"></div><div class="acts"><button class="btn pri" id="mk" type="button">Lock it in 🔒</button></div>');
  function up(){var v=+$('#mr').value,f=F[Math.min(4,Math.floor(v/20))];$('#mf').textContent=f[0];$('#mv').textContent=f[1]+' · '+v+'%'+(v===100?' 💥 Broke the meter!':'');return[v,f]}
@@ -305,9 +271,8 @@ function opener(){put('<div class="big hop">💌</div><h2>That’s all my questi
 function letter(){confetti(120);
  put('<div class="big hop">🎂❤️🎈</div><h2>Happy birthday, '+CFG.her+'!</h2><div class="letter">'+MSG.map(function(p){return '<p>'+p+'</p>'}).join('')+'</div><div class="acts"><button class="btn pri" id="go" type="button">One last surprise 🎁</button></div>');
  window.scrollTo(0,0);$('#go').onclick=fin}
-function fin(){var sm=CFG.her+'’s answers 💌\n'+ans.map(function(x){return '• '+x.q+' → '+x.a}).join('\n')+'\n\nThank you Jeff for the birthday surprise 🥹💖 Here’s my thank-you video (not view once) 🎥';
- var wa='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(sm);confetti(140);
- put('<h2>Your birthday card 🎁</h2><img class="gif" src="'+M.gif+'" alt="Animated happy birthday card with Gladys’s photos, balloons and confetti"><p>Made just for you. Save it and keep it forever.</p><p>One last thing: record a short video saying thanks and send it to Jeff on WhatsApp. Please don’t send it as view once 🎥</p><div class="acts"><a class="btn pri" href="'+M.gif+'" download="happy-birthday-gladys.webp">Save my card 💾</a><a class="btn" href="'+wa+'" target="_blank" rel="noopener">Send Jeff my thank-you video 🎥</a><button class="btn" id="bk" type="button">Back to home</button></div>');
+function fin(){confetti(140);
+ put('<h2>Your birthday card 🎁</h2><img class="gif" src="'+M.gif+'" alt="Animated happy birthday card with Gladys’s photos, balloons and confetti"><p>Made just for you. Save it and keep it forever.</p><div class="acts"><a class="btn pri" href="'+M.gif+'" download="happy-birthday-gladys.webp">Save my card 💾</a><button class="btn" id="bk" type="button">Back to home</button></div>');
  $('#pic').style.display='none';window.scrollTo(0,0);$('#bk').onclick=function(){go('home')}}
 
 function go(v){var h={home:'',story:'story',gal:'gallery',eps:'episodes'}[v];if(location.hash.slice(1)===h)route();else location.hash=h}
@@ -317,7 +282,7 @@ function route(){var h=location.hash.slice(1);if(h!=='episodes')trl=false;var v=
  clearInterval(timer);clearTimeout(adv);clearTimeout(chk);vid.pause();heroGo(v==='home');window.scrollTo(0,0);
  if(v==='story'){startBg();intro()}else if(v==='eps')load(cur)}
 function hint(t){var h=$('#mh');h.textContent=t;h.style.display='block';setTimeout(function(){h.style.display='none'},2500)}
-document.querySelectorAll('.nv').forEach(function(b){b.onclick=function(){var g=b.dataset.go;if(g==='profile'){var f=$('#pf');f.hidden=!f.hidden}else{if(g==='eps')trl=false;go(g)}}});
+document.querySelectorAll('.nv').forEach(function(b){b.onclick=function(){var g=b.dataset.go;if(g==='profile'){var f=$('#pf');f.hidden=!f.hidden}else{if(g==='eps')trl=false;if(g==='gal')MU.track(CFG.music2,true);go(g)}}});
 $('#read').onclick=function(){go('story')};$('#home').onclick=function(){go('home')};$('#start').onclick=function(){go('story')};$('#trailer').onclick=function(){trl=true;go('eps')};
 
 var GAL=[['her','70% 22%'],['fav'],['meet'],['red'],['p1','50% 30%'],['car'],['twist'],['p2','50% 22%'],['v1'],['v2'],['p3','50% 15%']],gi=0;
@@ -345,14 +310,16 @@ var MU=(function(){var pl=null,pl2=null,trk=CFG.music,ready=false,ready2=false,w
    onError:function(){if(trk!==CFG.music){trk=CFG.music;try{pl.loadVideoById({videoId:trk.id,startSeconds:trk.start})}catch(x){}}else dead=true}}});
   var v2={playsinline:1,controls:0,disablekb:1,rel:0,modestbranding:1,fs:0,start:CFG.music2.start};if(/^https?:/.test(location.protocol))v2.origin=location.origin;
   pl2=new YT.Player('ytp2',{width:200,height:200,videoId:CFG.music2.id,playerVars:v2,events:{
-   onReady:function(){if(trk===CFG.music2)return;ready2=true;warm=true;try{pl2.mute();pl2.playVideo()}catch(x){}},
+   onReady:function(){ready2=true;if(trk===CFG.music2){tryPlay();return}warm=true;try{pl2.mute();pl2.playVideo()}catch(x){}},
    onStateChange:function(e){if(warm){if(e.data===1){warm=false;try{pl2.pauseVideo();pl2.seekTo(CFG.music2.start,true)}catch(x){}}return}if(ap()!==pl2)return;playing=e.data===1;if(playing){$('#mh').style.display='none';if(!muted)$('#mtl').textContent='Music On'}if(e.data===0){try{pl2.seekTo(trk.start,true);pl2.playVideo()}catch(x){}}},
    onError:function(){ready2=false;warm=false;if(trk===CFG.music2&&ready){try{pl.loadVideoById({videoId:trk.id,startSeconds:trk.start})}catch(x){}}}}})};
  bt.onclick=function(){if(!playing){want=true;muted=false;tryPlay();return}setMute(!muted)};
  var kick=function(e){if(e.target.closest&&e.target.closest('#mt'))return;want=true;tryPlay()};addEventListener('pointerdown',kick,{passive:true});addEventListener('click',kick);
- return{track:function(m){if(m===trk)return;trk=m;playing=false;
+ function startTrack(m){
    if(m===CFG.music2&&ready2){warm=false;try{pl.pauseVideo()}catch(e){}try{pl2.seekTo(m.start,true);if(!muted){pl2.unMute();pl2.setVolume(85)}pl2.playVideo()}catch(e){}}
-   else{try{pl2.pauseVideo()}catch(e){}if(ready){try{pl.loadVideoById({videoId:m.id,startSeconds:m.start})}catch(e){}}}},load:function(){var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.async=true;document.head.appendChild(t)}}})();
+   else{try{pl2.pauseVideo()}catch(e){}if(ready){try{pl.loadVideoById({videoId:m.id,startSeconds:m.start})}catch(e){}}}
+   [250,700,1400].forEach(function(ms){setTimeout(function(){if(trk===m&&!playing&&!dead){var p=(m===CFG.music2&&ready2)?pl2:pl;try{if(!muted){p.unMute();p.setVolume(85)}p.playVideo()}catch(e){}}},ms)})}
+ return{track:function(m,force){if(m===trk&&!force)return;if(m!==trk){trk=m;playing=false}startTrack(m)},load:function(){var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.async=true;document.head.appendChild(t)}}})();
 MU.load();
 addEventListener('pointerdown',function(){if(!vid.hidden&&vid.paused&&document.body.classList.contains('eps')){var p=vid.play();if(p&&p.catch)p.catch(function(){})}},{passive:true});
 
@@ -365,7 +332,6 @@ function hStep(){if(!hOn)return;clearTimeout(hT);var s=HS[hi],el=hCur===hA?hB:hA
  el.style.objectPosition=s[1];el.src=M[s[0]];hShow(el);hT=setTimeout(hNext,hi===0?4500:3500)}
 function heroGo(on){hOn=on;clearTimeout(hT);if(!on)return;if(reduce)return;hi=0;hStep()}
 document.addEventListener('visibilitychange',function(){var b=document.body.classList;heroGo(!document.hidden&&!b.contains('story')&&!b.contains('eps')&&!b.contains('isgal'))});
-function tick(){var d=new Date();$('#clock').textContent='LIVE '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}
 route();
 </script>
 </body>
