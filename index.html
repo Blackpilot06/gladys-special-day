@@ -185,7 +185,7 @@ body.isgal #gal{display:block}body.isgal #hero{display:none}
 <body>
 <div class="bgs" id="bgs" aria-hidden="true"></div>
 <div id="mh" class="mh">🎵 Tap anywhere for music</div>
-<div id="yt" aria-hidden="true"><div id="ytp"></div></div>
+<div id="yt" aria-hidden="true"><div id="ytp"></div><div id="ytp2"></div></div>
 
 <header class="top" id="top"><span class="logo">Gladys<b>TV</b></span><nav class="mnav" aria-label="Main"><button class="nv on" data-go="home" type="button">🏠 Home</button><button class="nv" data-go="eps" type="button">▶ Episodes</button><button class="nv" data-go="gal" type="button">🎁 Specials</button><button class="nv" data-go="profile" type="button"><img class="nvp" id="nvp" alt=""> Profile</button></nav><button id="mt" type="button"><span aria-hidden="true">♪</span> <span id="mtl">Tap for music</span></button></header>
 <section id="hero" class="hero"><div class="hphoto"><img id="hpic" class="on kb" alt="Gladys smiling in a tiara"><img id="hpic2" alt=""><div class="hdots" id="hdots" aria-hidden="true"></div></div><div class="htxt"><div class="crown" aria-hidden="true">👑</div><h1><span class="hb">Happy Birthday</span><span class="hn">Gladys!</span></h1><p class="tag">You’re not just a year older…<br>You’re a year more amazing! ❤️</p><button class="btn pri" id="trailer" type="button">▶ Watch trailer</button></div><div class="hact"><div class="qcard"><span class="qi" aria-hidden="true">💬</span><b>A few fun questions, made just for you</b><button class="btn pri" id="start" type="button">▶ Start the quiz ›</button></div></div></section>
@@ -334,17 +334,25 @@ document.addEventListener('click',function(e){var f=$('#pf');if(!f.hidden&&!f.co
 addEventListener('keydown',function(e){if(e.key==='Escape')$('#pf').hidden=true});
 window.addEventListener('hashchange',route);
 
-var MU=(function(){var pl=null,trk=CFG.music,ready=false,playing=false,dead=false,muted=false,want=false,bt=$('#mt');
- function tryPlay(){if(!ready||playing||dead)return;try{pl.seekTo(trk.start,true);if(!muted){pl.unMute();pl.setVolume(85)}pl.playVideo()}catch(e){}}
- function setMute(m){muted=m;try{if(m){pl.mute();pl.setVolume(0)}else{pl.unMute();pl.setVolume(85)}}catch(e){}$('#mtl').textContent=m?'Music Off':'Music On';bt.setAttribute('aria-label',m?'Unmute music':'Mute music');bt.setAttribute('aria-pressed',m?'true':'false')}
+var MU=(function(){var pl=null,pl2=null,trk=CFG.music,ready=false,ready2=false,warm=false,playing=false,dead=false,muted=false,want=false,bt=$('#mt');
+ function ap(){return trk===CFG.music2&&ready2?pl2:pl}
+ function tryPlay(){var p=ap();if(!(p===pl2?ready2:ready)||playing||dead)return;try{p.seekTo(trk.start,true);if(!muted){p.unMute();p.setVolume(85)}p.playVideo()}catch(e){}}
+ function setMute(m){muted=m;[pl,pl2].forEach(function(p){try{if(m){p.mute();p.setVolume(0)}else{p.unMute();p.setVolume(85)}}catch(e){}});$('#mtl').textContent=m?'Music Off':'Music On';bt.setAttribute('aria-label',m?'Unmute music':'Mute music');bt.setAttribute('aria-pressed',m?'true':'false')}
  window.onYouTubeIframeAPIReady=function(){var v={playsinline:1,controls:0,disablekb:1,rel:0,modestbranding:1,fs:0,start:CFG.music.start};if(/^https?:/.test(location.protocol))v.origin=location.origin;
   pl=new YT.Player('ytp',{width:200,height:200,videoId:CFG.music.id,playerVars:v,events:{
    onReady:function(){ready=true;if(trk!==CFG.music){try{pl.loadVideoById({videoId:trk.id,startSeconds:trk.start})}catch(x){}}else tryPlay();setTimeout(function(){if(!playing){$('#mh').style.display='block';setTimeout(function(){$('#mh').style.display='none'},9000)}},1500)},
-   onStateChange:function(e){playing=e.data===1;if(playing&&muted){try{pl.mute();pl.setVolume(0)}catch(x){}}if(playing){$('#mh').style.display='none';if(!muted)$('#mtl').textContent='Music On'}if(e.data===0){try{pl.seekTo(trk.start,true);pl.playVideo()}catch(x){}}},
-   onError:function(){if(trk!==CFG.music){trk=CFG.music;try{pl.loadVideoById({videoId:trk.id,startSeconds:trk.start})}catch(x){}}else dead=true}}})};
+   onStateChange:function(e){if(ap()!==pl)return;playing=e.data===1;if(playing&&muted){try{pl.mute();pl.setVolume(0)}catch(x){}}if(playing){$('#mh').style.display='none';if(!muted)$('#mtl').textContent='Music On'}if(e.data===0){try{pl.seekTo(trk.start,true);pl.playVideo()}catch(x){}}},
+   onError:function(){if(trk!==CFG.music){trk=CFG.music;try{pl.loadVideoById({videoId:trk.id,startSeconds:trk.start})}catch(x){}}else dead=true}}});
+  var v2={playsinline:1,controls:0,disablekb:1,rel:0,modestbranding:1,fs:0,start:CFG.music2.start};if(/^https?:/.test(location.protocol))v2.origin=location.origin;
+  pl2=new YT.Player('ytp2',{width:200,height:200,videoId:CFG.music2.id,playerVars:v2,events:{
+   onReady:function(){if(trk===CFG.music2)return;ready2=true;warm=true;try{pl2.mute();pl2.playVideo()}catch(x){}},
+   onStateChange:function(e){if(warm){if(e.data===1){warm=false;try{pl2.pauseVideo();pl2.seekTo(CFG.music2.start,true)}catch(x){}}return}if(ap()!==pl2)return;playing=e.data===1;if(playing){$('#mh').style.display='none';if(!muted)$('#mtl').textContent='Music On'}if(e.data===0){try{pl2.seekTo(trk.start,true);pl2.playVideo()}catch(x){}}},
+   onError:function(){ready2=false;warm=false;if(trk===CFG.music2&&ready){try{pl.loadVideoById({videoId:trk.id,startSeconds:trk.start})}catch(x){}}}}})};
  bt.onclick=function(){if(!playing){want=true;muted=false;tryPlay();return}setMute(!muted)};
  var kick=function(e){if(e.target.closest&&e.target.closest('#mt'))return;want=true;tryPlay()};addEventListener('pointerdown',kick,{passive:true});addEventListener('click',kick);
- return{track:function(m){if(m===trk)return;trk=m;if(ready){try{pl.loadVideoById({videoId:m.id,startSeconds:m.start})}catch(e){}}},load:function(){var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.async=true;document.head.appendChild(t)}}})();
+ return{track:function(m){if(m===trk)return;trk=m;playing=false;
+   if(m===CFG.music2&&ready2){warm=false;try{pl.pauseVideo()}catch(e){}try{pl2.seekTo(m.start,true);if(!muted){pl2.unMute();pl2.setVolume(85)}pl2.playVideo()}catch(e){}}
+   else{try{pl2.pauseVideo()}catch(e){}if(ready){try{pl.loadVideoById({videoId:m.id,startSeconds:m.start})}catch(e){}}}},load:function(){var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.async=true;document.head.appendChild(t)}}})();
 MU.load();
 addEventListener('pointerdown',function(){if(!vid.hidden&&vid.paused&&document.body.classList.contains('eps')){var p=vid.play();if(p&&p.catch)p.catch(function(){})}},{passive:true});
 
